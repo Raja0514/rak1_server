@@ -13,5 +13,14 @@ router3.post("/applyproject", async (req, res) => {
   res.json(data1);
 });
 
+router3.get("/getallfreelancer", async (req, res) => {
+  try {
+    const data2 = await model.find();
+    res.json(data2);
+  } catch (err) {
+    res.send("Error" + err);
+  }
+});
+
 
 module.exports = router3;
